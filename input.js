@@ -32,6 +32,18 @@ const handleUserInput = function (data) {
   if (data === 'd') {
     connection.write("Move: right");
   }
+  if (data === 'g') {
+    connection.write("Say: Is this thing on???");
+  }
+  if (data === 'q') {
+    connection.write("Say: Ssssss! I'm snek.");
+  }
+  if (data === 'o') {
+    connection.write("Say: OoOoOoOoOo");
+  }
+  if (data === 'e') {
+    connection.write("Say: Eeek! A snake!");
+  }
 
 };
 
