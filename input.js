@@ -1,4 +1,7 @@
 const net = require("net");
+const { 
+  MOVE_UP, MOVE_DOWN, MOVE_LEFT, MOVE_RIGHT, SNEK_SOUND, EEEK_SOUND 
+} = require("./constants");
 
 let connection;
 
@@ -21,28 +24,22 @@ const handleUserInput = function (data) {
     process.exit();
   }
   if (data === 'w') {
-    connection.write("Move: up");
+    connection.write(MOVE_UP);
   }
   if (data === 'a') {
-    connection.write("Move: left");
+    connection.write(MOVE_LEFT);
   }
   if (data === 's') {
-    connection.write("Move: down");
+    connection.write(MOVE_DOWN);
   }
   if (data === 'd') {
-    connection.write("Move: right");
-  }
-  if (data === 'g') {
-    connection.write("Say: Is this thing on???");
+    connection.write(MOVE_RIGHT);
   }
   if (data === 'q') {
-    connection.write("Say: Ssssss! I'm snek.");
-  }
-  if (data === 'o') {
-    connection.write("Say: OoOoOoOoOo");
+    connection.write(SNEK_SOUND);
   }
   if (data === 'e') {
-    connection.write("Say: Eeek! A snake!");
+    connection.write(EEEK_SOUND);
   }
 
 };
